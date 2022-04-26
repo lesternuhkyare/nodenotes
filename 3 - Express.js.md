@@ -200,5 +200,47 @@ app.use('/admin',adminRoutes);
 ```
 Now, all the routes in admin.js will first be filtered with the /admin path, and now the /admin path is 'shunted' in front of all the routes in admin.js. 
 
-## Creating HTML Pages
+## Creating/Serving HTML Pages
+
+In shop.js...
+```js
+const path = require('path');
+const express = require('express');
+
+const router = express.Router();
+
+router.get('/', (req, res, next) => {
+  res.sendFile(path.join(__dirname, '../', 'views', 'shop.html')); // returns a path by concatenating the different segments, path.join adds the '/' for you (works on all OS) 
+  // dirname holds the absolute path on our OS to this folder
+});
+
+module.exports = router;
+```
+In shop.html...
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Shop</a></li>
+                <li><a href="/add-product">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>My Products</h1>
+        <p>List of all the products...</p>
+    </main>
+</body>
+</html>
+```
+
 
