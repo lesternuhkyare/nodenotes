@@ -248,12 +248,15 @@ In shop.html...
 Serving files statically simple means not handled by the Express router (or other middleware), but instead directly forwarded to the file system. 
 
 In app.js:
+
 ![image](https://user-images.githubusercontent.com/104043093/166815388-1f85a826-2923-4b00-b7cd-6d76824c00b5.png)
 
 In add-product.html:
+
 ![image](https://user-images.githubusercontent.com/104043093/166815473-397008b4-33e4-47c6-bb09-5599fa03a0c3.png)
 
 File structure:
+
 ![image](https://user-images.githubusercontent.com/104043093/166815516-cf7dfc65-5f7e-4c51-b714-e693d6627e44.png)
 
 
