@@ -259,4 +259,17 @@ File structure:
 
 ![image](https://user-images.githubusercontent.com/104043093/166815516-cf7dfc65-5f7e-4c51-b714-e693d6627e44.png)
 
+## Module Summary
+
+Middleware - next() and res()
+
+Middleware functions can be added with the use() method. Middleware functions handle a request and should either call next() or res(). 
+
+Routing
+
+You can filter requests by path and method. If you filter by method, paths are matched exactly, otherwise, the first segment of a URL is matched. You can use express.Router to split your routes across files elegantly. 
+
+Serving Files
+
+Can use sendFile() to your users, e.g and HTML file. If a request is directly made for a file, e.g a css file, you can enable static serving for such files using express.static(). 
 
