@@ -9,12 +9,20 @@ And in shop.js, we console.log() the exported products object contained in admin
 
 ![image](https://user-images.githubusercontent.com/104043093/169668454-52a8f618-277c-4dfd-bf5a-bb7d8e34b447.png)
 
-
-
-
-## Templating Engines - An Overview
-
 ## Installing and Implementing Pug
+
+```npm install --save esj pug express-handlebars```
+
+In app.js,
+```js app.set(); ```
+app.set() allows us to set any values globally on our Express application. We can use a couple of reserved keynames. 'view engine' allows us to tell express to render any dynamic templates using the 'view engine'. 
+'views' allows us to tell express where to find these dynamic views. 
+
+```js
+app.set('view engine', 'pug');
+app.set('views', 'views');
+```
+Technically, we don't need to set 'views' to 'views' since the default setting of .set('views') will already look in the views folder we defined. To add templates, go to your views folder and create a .pug file. 
 
 ## Outputting Dynamic Content
 
