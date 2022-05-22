@@ -14,7 +14,7 @@ And in shop.js, we console.log() the exported products object contained in admin
 ```npm install --save esj pug express-handlebars```
 
 In app.js,
-```js app.set(); ```
+```app.set(); ```
 app.set() allows us to set any values globally on our Express application. We can use a couple of reserved keynames. 'view engine' allows us to tell express to render any dynamic templates using the 'view engine'. 
 'views' allows us to tell express where to find these dynamic views. 
 
@@ -23,6 +23,20 @@ app.set('view engine', 'pug');
 app.set('views', 'views');
 ```
 Technically, we don't need to set 'views' to 'views' since the default setting of .set('views') will already look in the views folder we defined. To add templates, go to your views folder and create a .pug file. 
+
+In our pug file, we replicate our HTML files. For example, shop.html:
+
+![image](https://user-images.githubusercontent.com/104043093/169716632-6068e102-1c36-4aa7-a1f8-d4c861c617e0.png)
+
+Then, in shop.js, we need to tell Express to render our default rendering engine, which we set in app.js to pug. In shop.js:
+
+```js
+router.get('/', (req, res, next) => {
+  res.render('shop');
+});
+```
+
+We also don't have to define our path, since we set our default path file using the .set() method in app.js. 
 
 ## Outputting Dynamic Content
 
